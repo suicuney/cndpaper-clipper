@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>cndpaper 网页裁剪</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="popup-page">
+    <main class="popup-shell">
+      <header class="brand-row">
+        <div class="brand">
+          <img src="icons/icon48.png" width="34" height="34" alt="" />
+          <div><strong>cndpaper 网页裁剪</strong><span>保存为本地 Markdown</span></div>
+        </div>
+        <button id="settings-button" class="icon-button" type="button" aria-label="打开设置">⚙</button>
+      </header>
+
+      <section id="loading-state" class="loading-card"><span class="spinner"></span>正在分析当前网页…</section>
+
+      <section id="page-content" hidden>
+        <label class="field-label" for="page-title">文件标题</label>
+        <input id="page-title" class="title-input" type="text" maxlength="180" />
+        <div id="page-source" class="source-line"></div>
+        <p id="page-excerpt" class="excerpt"></p>
+        <div class="destination-card">
+          <span class="destination-label">保存到</span>
+          <div id="destination-path" class="destination-path"></div>
+        </div>
+      </section>
+
+      <section id="setup-state" class="setup-card" hidden>
+        <strong>先设置保存目录</strong>
+        <p>只需设置一次，之后会自动按日期归档。</p>
+        <button id="setup-button" class="secondary-button" type="button">选择本地目录</button>
+      </section>
+
+      <div id="status-message" class="status-message" hidden></div>
+      <button id="save-button" class="primary-button" type="button">保存为 Markdown</button>
+      <p class="privacy-note">内容只在本机处理，不会上传到服务器</p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>cndpaper 网页裁剪设置</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="options-page">
+    <div class="options-layout">
+      <aside class="sidebar">
+        <div class="brand brand-large">
+          <img src="icons/icon48.png" width="38" height="38" alt="" />
+          <div><strong>cndpaper</strong><span>网页裁剪</span></div>
+        </div>
+        <nav><span class="nav-item active">常规设置</span></nav>
+      </aside>
+      <main class="settings-main">
+        <div class="settings-header">
+          <div><p class="eyebrow">设置</p><h1>本地保存</h1><p>选择根目录，网页会自动保存到当天的日期文件夹。</p></div>
+          <span class="version-badge">v2.0.0</span>
+        </div>
+
+        <section class="settings-card">
+          <div class="section-heading"><h2>保存目录</h2><p>扩展只会访问你主动授权的目录。</p></div>
+          <div class="directory-box">
+            <div><span class="small-label">当前目录</span><strong id="directory-name">正在读取…</strong></div>
+            <span id="directory-status" class="status-badge" data-kind="neutral">检查中</span>
+          </div>
+          <div class="button-row">
+            <button id="choose-directory" class="primary-button compact" type="button">选择或更换目录</button>
+            <button id="authorize-directory" class="secondary-button compact" type="button">重新授权</button>
+          </div>
+        </section>
+
+        <section class="settings-card">
+          <div class="section-heading"><h2>文件规则</h2><p>目录结构固定，保持每天的裁剪内容清晰可查。</p></div>
+          <div class="setting-row"><div><strong>日期目录</strong><p>根目录 / YYYY-MM-DD / 网页标题.md</p></div><span class="locked-value">固定启用</span></div>
+          <div class="setting-row"><div><strong>同名文件</strong><p>选择文件名冲突时的处理方式。</p></div>
+            <select id="conflict-policy"><option value="uniquify">自动添加序号</option><option value="overwrite">覆盖已有文件</option></select>
+          </div>
+          <div class="setting-row"><div><strong>Markdown 元数据</strong><p>自动写入标题、来源、作者、发布日期和裁剪时间。</p></div><span class="locked-value">固定启用</span></div>
+        </section>
+        <div id="save-feedback" class="save-feedback" aria-live="polite"></div>
+      </main>
+    </div>
+    <script src="options.js"></script>
+  </body>
+</html>
